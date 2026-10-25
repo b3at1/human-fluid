@@ -1,4 +1,4 @@
-.PHONY: setup dev test build check bank admin
+.PHONY: setup dev test build check bank admin ai-models
 setup:
 	uv sync --project backend --frozen
 	npm --prefix frontend ci
@@ -17,3 +17,5 @@ build:
 check: test build
 admin:
 	cd backend && .venv/bin/python -m app.cli admin
+ai-models:
+	backend/.venv/bin/python scripts/list_ai_models.py

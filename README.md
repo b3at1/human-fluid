@@ -73,6 +73,10 @@ Core practice needs no AI. To activate discussion, configure only backend settin
 
 Cloud mode additionally requires `AI_API_KEY`, HTTPS and explicit `AI_CAP_VERIFIED=true` after the owner verifies their provider/model's byte-level token bounds and chat `max_tokens` enforcement. Unknown compatibility must remain disabled. No funded call was performed during implementation. Request/token reservations are not a dollar cap; see [SECURITY](docs/SECURITY.md). After restarting with server configuration, sign in as owner, issue an expiring single-use invitation, and deliver it out of band. A guest redeems it under Settings. Only explicit Send triggers inference; no browser API-key form exists.
 
+For a local app using TAMUS-hosted Claude Opus 4.6, see [TAMUS local setup](docs/TAMUS_LOCAL.md). `make ai-models` privately prompts for your provider URL/key and lists exact available Opus model IDs using only a model-list GET, without generating a response or saving the key. The exact TAMUS deployment settings are not assumed from Anthropic's direct model name.
+
+The Appearance selector supports System, Light and Dark. Preferences persist locally; System follows operating-system changes. Themes also apply before the built SPA paints.
+
 ## Back up and restore
 
 Guest JSON export/restore/deletion are in Settings. Restored results stay unverified and cannot grant privileges or fabricate measured gains. For consistent operational backups:
