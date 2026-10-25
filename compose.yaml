@@ -1,0 +1,32 @@
+services:
+  app:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      APP_ENV: ${APP_ENV:-development}
+      PUBLIC_ORIGIN: ${CONTAINER_PUBLIC_ORIGIN:-http://localhost:8000}
+      COOKIE_SECURE: ${COOKIE_SECURE:-false}
+      DATABASE_URL: sqlite:////data/human-fluid.db
+      AI_PROVIDER: ${AI_PROVIDER:-disabled}
+      AI_ENABLED: ${AI_ENABLED:-false}
+      AI_BASE_URL: ${AI_BASE_URL:-}
+      AI_MODEL: ${AI_MODEL:-}
+      AI_API_KEY: ${AI_API_KEY:-}
+      AI_CAP_VERIFIED: ${AI_CAP_VERIFIED:-false}
+      AI_MAX_INPUT_TOKENS: ${AI_MAX_INPUT_TOKENS:-6000}
+      AI_MAX_OUTPUT_TOKENS: ${AI_MAX_OUTPUT_TOKENS:-1500}
+      AI_GRANT_REQUESTS_PER_MINUTE: ${AI_GRANT_REQUESTS_PER_MINUTE:-4}
+      AI_GRANT_REQUESTS_PER_DAY: ${AI_GRANT_REQUESTS_PER_DAY:-30}
+      AI_GLOBAL_REQUESTS_PER_DAY: ${AI_GLOBAL_REQUESTS_PER_DAY:-100}
+      AI_GLOBAL_TOKENS_PER_DAY: ${AI_GLOBAL_TOKENS_PER_DAY:-750000}
+      AI_GRANT_TOKENS_PER_DAY: ${AI_GRANT_TOKENS_PER_DAY:-225000}
+    volumes:
+      - fluid-data:/data
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+volumes:
+  fluid-data:

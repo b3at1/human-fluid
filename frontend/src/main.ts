@@ -1,0 +1,17 @@
+import {createApp} from 'vue'
+import {createPinia} from 'pinia'
+import {createRouter,createWebHistory} from 'vue-router'
+import App from './App.vue'
+import Train from './views/Train.vue'
+import Exercise from './views/Exercise.vue'
+import Review from './views/Review.vue'
+import Progress from './views/Progress.vue'
+import About from './views/About.vue'
+import Settings from './views/Settings.vue'
+import Discussion from './views/Discussion.vue'
+import Admin from './views/Admin.vue'
+import '@fontsource/ibm-plex-mono/400.css'
+import '@fontsource/ibm-plex-mono/500.css'
+import './styles/main.css'
+const router=createRouter({history:createWebHistory(),routes:[{path:'/',component:Train},{path:'/train/:id',component:Exercise},{path:'/review',component:Review},{path:'/review/:id',component:Review},{path:'/progress',component:Progress},{path:'/about',component:About},{path:'/settings',component:Settings},{path:'/discussion/:id',component:Discussion},{path:'/admin/:page?',component:Admin},{path:'/:pathMatch(.*)*',redirect:'/'}],scrollBehavior:()=>({top:0})})
+createApp(App).use(createPinia()).use(router).mount('#app')

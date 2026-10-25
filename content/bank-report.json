@@ -1,0 +1,52 @@
+{
+  "version": "rg-0.1.25-adapter-1",
+  "accepted": {
+    "dependencies/1": {
+      "practice": 50,
+      "check": 15
+    },
+    "dependencies/2": {
+      "check": 15,
+      "practice": 50
+    },
+    "dependencies/3": {
+      "practice": 50,
+      "check": 15
+    },
+    "dependencies/4": {
+      "practice": 50,
+      "check": 15
+    },
+    "logic/1": {
+      "check": 15,
+      "practice": 50
+    },
+    "logic/2": {
+      "practice": 50,
+      "check": 15
+    },
+    "logic/3": {
+      "check": 15,
+      "practice": 50
+    },
+    "logic/4": {
+      "practice": 50,
+      "check": 15
+    }
+  },
+  "rejected": {
+    "dependencies/1": {
+      "duplicate_structure": 2
+    },
+    "dependencies/2": {},
+    "dependencies/3": {},
+    "dependencies/4": {},
+    "logic/1": {
+      "duplicate_structure": 247
+    },
+    "logic/2": {},
+    "logic/3": {},
+    "logic/4": {}
+  },
+  "max_attempts_per_level": 20000
+}

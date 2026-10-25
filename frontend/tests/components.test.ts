@@ -1,0 +1,9 @@
+import {describe,it,expect} from 'vitest'
+import {mount} from '@vue/test-utils'
+import DependencyGraph from '../src/components/DependencyGraph.vue'
+import TaskProblem from '../src/components/TaskProblem.vue'
+import {parseInput} from '../src/api/client'
+import type {Task} from '../src/types'
+describe('dependency semantics',()=>{it('renders prerequisite 3 pointing to 2, 1, 0 including isolated nodes',()=>{const w=mount(DependencyGraph,{props:{courses:[0,1,2,3,4],edges:[{prerequisite:3,course:2},{prerequisite:3,course:1},{prerequisite:3,course:0}]}});expect(w.findAll('path[data-prerequisite="3"]')).toHaveLength(3);expect(w.text()).toContain('Course 2 requires Course 3.');expect(w.text()).toContain('Course 4 has no connections.');expect(w.findAll('circle')).toHaveLength(5)})})
+describe('structured controls',()=>{it('emits boolean false rather than its string spelling',async()=>{const task={family:'dependencies',render:{courses:[0,1],edges:[]},response_schema:{kind:'boolean_choice'}} as unknown as Task;const w=mount(TaskProblem,{props:{task,modelValue:null}});await w.findAll('input[type="radio"]')[1]!.setValue(true);expect(w.emitted('update:modelValue')?.[0]).toEqual([false])});it('uses exactly the three ordering meanings',()=>{const task={family:'ordering',render:{premises:['A comes before B.'],claim:'A comes before C.'}} as unknown as Task;const w=mount(TaskProblem,{props:{task,modelValue:null}});expect(w.findAll('input')).toHaveLength(3);expect(w.text()).toContain('Holds in some valid orders, but not all')})})
+describe('numeric input boundaries',()=>{it('preserves a list and empty list',()=>{expect(parseInput('[3, -2, 4]',true)).toEqual([3,-2,4]);expect(parseInput('[]',true)).toEqual([])});it('rejects malformed input instead of coercing it',()=>{expect(()=>parseInput('1e2',false)).toThrow();expect(()=>parseInput('2,,3',true)).toThrow();expect(()=>parseInput('',false)).toThrow()})})

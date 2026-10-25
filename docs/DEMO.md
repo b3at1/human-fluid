@@ -1,0 +1,13 @@
+# Three-minute demonstration
+
+Use `make dev` after `make setup`. Start in a fresh browser profile to keep the demonstration distinct from any real progress. No synthetic improvement history is needed.
+
+1. **0:00–0:25 — Start.** Show the white/yellow monospaced notebook. Click **Start training**. No registration, timer or model setup. The default session has eight problems, with only an approximate duration.
+2. **0:25–0:55 — See the model.** On dependency reasoning, point to “prerequisite → course that requires it” and expand the equivalent list. The marked onboarding example is outside assessment pools. Submit a conclusion and show either a concrete cycle or a valid complete course order. A hint marks assistance; no pressure to guess quickly.
+3. **0:55–1:25 — Test a hypothesis.** From Train choose Hypothesis testing. Enter `1` as an experiment input, observe the output, then compare it with the visible finite candidates. Submit an identified rule. The explanation evaluates actual queries and compares an informative alternative under the disclosed uniform prior. The information metric is instructional, not intelligence.
+4. **1:25–1:50 — Keep the thread.** Resume the mixed session. Show “Why this problem?”: broad coverage or a due fresh related review. Explain that advancement needs at least six unaided samples with five correct and multiple structures. This is an inspectable rule policy, not learned RL.
+5. **1:50–2:15 — Learn after an attempt.** Open Review and a completed practice item. Show the original problem and worked proof. Open discussion. Without owner approval or a configured provider, show the honest locked/disabled state and use the deterministic explanation. If the owner independently enabled a provider and issued a grant, send one question only after explaining the context disclosure and optional scratchpad sharing.
+6. **2:15–2:45 — Measure separately.** Open Progress. Practice has family/level denominators and separate assistance counts. Fixed checks have ten balanced level-2 items, no hints, and aggregate completion results. Solutions remain sealed until explicit release. A scheduling probe is labeled exploratory presentation transfer, not far transfer.
+7. **2:45–3:00 — State the claim.** “Practice reasoning strategies. See what transfers.” The application tests a learning hypothesis; it does not establish that users' fluid or general intelligence increased. Data export, restore and deletion are under Settings.
+
+Automated browser tests run in a temporary synthetic profile with a clearly labeled test provider. Their screenshots are UI verification, not longitudinal experiment results or live model verification. The test server is never the public deployment entry point.
